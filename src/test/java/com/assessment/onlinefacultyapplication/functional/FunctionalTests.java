@@ -47,8 +47,6 @@ public class FunctionalTests {
 
 			departmentDAO = new DepartmentDAOImpl(url, username, password);
 			teacherDAO = new TeacherDAOImpl(url, username, password);
-//			dishDAO.removeAllDishes();
-//			restaurantDAO.deleteAllRestaurants();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -178,7 +176,6 @@ public class FunctionalTests {
 
 		Teacher createdTeacher = teacherDAO.createTeacher(teacher);
 
-//        Assertions.assertNotNull(teacher.getId());
 		try {
 			yakshaAssert(currentTest(), createdTeacher != null ? true : false, businessTestFile);
 		} catch (Exception e) {
@@ -198,10 +195,6 @@ public class FunctionalTests {
 
 		Teacher retrievedTeacher = teacherDAO.getTeacherById(teacher.getId());
 
-//		Assertions.assertEquals(teacher.getName(), retrievedTeacher.getName());
-//		Assertions.assertEquals(teacher.getSubject(), retrievedTeacher.getSubject());
-//		Assertions.assertEquals(teacher.getDesignation(), retrievedTeacher.getDesignation());
-//		Assertions.assertEquals(teacher.getDepartmentId(), retrievedTeacher.getDepartmentId());
 		try {
 			yakshaAssert(currentTest(),
 					teacher != null && teacher.getName().equals(retrievedTeacher.getName())
@@ -232,9 +225,6 @@ public class FunctionalTests {
 
 		List<Teacher> teachers = teacherDAO.getAllTeachers();
 
-//		Assertions.assertEquals(2, teachers.size());
-//		Assertions.assertTrue(teachers.contains(teacher1));
-//		Assertions.assertTrue(teachers.contains(teacher2));
 		try {
 			yakshaAssert(currentTest(), teachers != null ? true : false, businessTestFile);
 		} catch (Exception e) {
@@ -259,8 +249,6 @@ public class FunctionalTests {
 
 		Teacher retrievedTeacher = teacherDAO.getTeacherById(teacher.getId());
 
-//		Assertions.assertEquals(updatedName, retrievedTeacher.getName());
-//		Assertions.assertEquals(updatedSubject, retrievedTeacher.getSubject());
 		try {
 			yakshaAssert(currentTest(), updatedName.equals(retrievedTeacher.getName())
 					&& updatedSubject.equals(retrievedTeacher.getSubject()) ? true : false, businessTestFile);
@@ -282,7 +270,6 @@ public class FunctionalTests {
 
 		Teacher retrievedTeacher = teacherDAO.getTeacherById(teacher.getId());
 
-//		Assertions.assertNull(retrievedTeacher);
 		try {
 			yakshaAssert(currentTest(), isDeleted == true && retrievedTeacher == null ? true : false, businessTestFile);
 		} catch (Exception e) {
@@ -308,8 +295,6 @@ public class FunctionalTests {
 
 		List<Teacher> teachers = teacherDAO.searchTeachersByName("John");
 
-//		Assertions.assertEquals(1, teachers.size());
-//		Assertions.assertTrue(teachers.contains(teacher1));
 		try {
 			yakshaAssert(currentTest(), teachers != null ? true : false, businessTestFile);
 		} catch (Exception e) {
@@ -335,8 +320,6 @@ public class FunctionalTests {
 
 		List<Teacher> teachers = teacherDAO.searchTeachersBySubject("Physics");
 
-//		Assertions.assertEquals(1, teachers.size());
-//		Assertions.assertTrue(teachers.contains(teacher2));
 		try {
 			yakshaAssert(currentTest(), teachers != null ? true : false, businessTestFile);
 		} catch (Exception e) {
