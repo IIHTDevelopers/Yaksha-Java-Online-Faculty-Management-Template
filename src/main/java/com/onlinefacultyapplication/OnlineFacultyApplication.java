@@ -15,7 +15,9 @@ import org.jboss.jandex.Main;
 import com.onlinefacultyapplication.model.Department;
 import com.onlinefacultyapplication.model.Teacher;
 import com.onlinefacultyapplication.repository.DepartmentDAO;
+import com.onlinefacultyapplication.repository.DepartmentDAOImpl;
 import com.onlinefacultyapplication.repository.TeacherDAO;
+import com.onlinefacultyapplication.repository.TeacherDAOImpl;
 
 public class OnlineFacultyApplication {
 	private static DepartmentDAO departmentDAO;
