@@ -42,10 +42,6 @@ public class DepartmentDAOImpl implements DepartmentDAO {
 		return false;
 	}
 
-	private List<Teacher> getTeachersByDepartment(int departmentId) {
-		return null;
-	}
-
 	@Override
 	public List<Department> searchDepartmentsByName(String name) {
 		return null;
